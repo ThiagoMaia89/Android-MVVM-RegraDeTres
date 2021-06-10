@@ -1,6 +1,7 @@
 package com.simplesoftware.regradetres;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -11,6 +12,7 @@ import androidx.lifecycle.ViewModelProvider;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -109,8 +111,11 @@ public class FragmentComposto extends Fragment {
     public void calcCLick() {
 
         calcComposta.setOnClickListener(v -> {
+
             mViewModel.setResult(valor1AComposta, valor1BComposta, valor2AComposta, valor2BComposta, valor3AComposta,
                     switch_valor1, switch_valor2, switch_valor3, tv_explicacao_composto);
+            InputMethodManager inputMethodManager = (InputMethodManager) requireContext().getSystemService(Activity.INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(v.getWindowToken(), 0);
         });
 
     }

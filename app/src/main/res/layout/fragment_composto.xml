@@ -240,9 +240,12 @@
     <TextView
         android:id="@+id/tv_explicacao_composto"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/brown_border"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginVertical="96dp"
         android:textStyle="bold"
+        android:gravity="center"
         android:textAlignment="center"
         android:textSize="16sp"
         android:textColor="@android:color/white"/>

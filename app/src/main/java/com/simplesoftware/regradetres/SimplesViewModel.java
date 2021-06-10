@@ -55,6 +55,7 @@ public class SimplesViewModel extends ViewModel {
                             + " está para " +
                             String.format("%.2f", result).replace(".", ","));
 
+
         } catch (Exception e){
 
             failureMessage("Preencha todos os campos!", valor1ASimples.getContext());

@@ -1,6 +1,7 @@
 package com.simplesoftware.regradetres;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -11,10 +12,13 @@ import androidx.lifecycle.ViewModelProvider;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.Objects;
 
 
 public class FragmentSimples extends Fragment {
@@ -105,7 +109,8 @@ public class FragmentSimples extends Fragment {
         calcSimples.setOnClickListener(v -> {
 
             mViewModel.setResult(valor1ASimples, valor1BSimples, valor2ASimples, aSwitch, tv_explicacao_simples);
-
+            InputMethodManager inputMethodManager = (InputMethodManager) requireContext().getSystemService(Activity.INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(v.getWindowToken(), 0);
         });
 
     }

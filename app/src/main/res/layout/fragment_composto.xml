@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#608A0D"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch_valor1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:text="@string/inversa"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch_valor2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:text="@string/inversa"
+            app:layout_constraintStart_toEndOf="@id/switch_valor1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/switch_valor3"/>
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch_valor3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:text="@string/inversa"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+        <EditText
+            android:id="@+id/valor1AComposta"
+            android:layout_width="100dp"
+            android:layout_height="35dp"
+            android:background="@drawable/bt_round"
+            android:gravity="center"
+            android:hint="@string/valor_1a"
+            android:layout_marginStart="10dp"
+            android:inputType="numberDecimal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/esta_para01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_igual"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/valor1AComposta"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/valor2AComposta"/>
+
+        <EditText
+            android:id="@+id/valor2AComposta"
+            android:layout_width="100dp"
+            android:layout_height="35dp"
+            android:background="@drawable/bt_round"
+            android:gravity="center"
+            android:hint="@string/valor_2a"
+            android:inputType="numberDecimal"
+            app:layout_constraintStart_toEndOf="@id/esta_para01"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/esta_para02"/>
+
+        <TextView
+            android:id="@+id/esta_para02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_igual"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/valor2AComposta"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/valor3AComposta"/>
+
+        <EditText
+            android:id="@+id/valor3AComposta"
+            android:layout_width="100dp"
+            android:layout_height="35dp"
+            android:background="@drawable/bt_round"
+            android:gravity="center"
+            android:hint="@string/valor_3a"
+            android:inputType="numberDecimal"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+        <EditText
+            android:id="@+id/valor1BComposta"
+            android:layout_width="100dp"
+            android:layout_height="35dp"
+            android:background="@drawable/bt_round"
+            android:gravity="center"
+            android:hint="@string/valor_1b"
+            android:inputType="numberDecimal"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/esta_para03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_igual"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/valor1BComposta"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/valor2BComposta"/>
+
+        <EditText
+            android:id="@+id/valor2BComposta"
+            android:layout_width="100dp"
+            android:layout_height="35dp"
+            android:background="@drawable/bt_round"
+            android:gravity="center"
+            android:hint="@string/valor_2b"
+            android:inputType="numberDecimal"
+            app:layout_constraintStart_toEndOf="@id/esta_para03"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/esta_para04"/>
+
+        <TextView
+            android:id="@+id/esta_para04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_igual"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/valor2BComposta"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/resultadoComposta"/>
+
+        <EditText
+            android:id="@+id/resultadoComposta"
+            android:layout_width="100dp"
+            android:layout_height="35dp"
+            android:background="@drawable/bt_round"
+            android:gravity="center"
+            android:hint="@string/x"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColorHint="@android:color/holo_orange_dark"
+            android:textStyle="bold"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/bt_CalcComposta"
+            style="@style/TextAppearance.MaterialComponents.Button"
+            android:layout_width="180dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bt_round2"
+            android:text="@string/calcular"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/bt_LimparComposta"
+            style="@style/TextAppearance.MaterialComponents.Button"
+            android:layout_width="180dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bt_round2"
+            android:text="@string/limpar"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_explicacao_composto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textColor="@android:color/white"/>
+
+</LinearLayout>

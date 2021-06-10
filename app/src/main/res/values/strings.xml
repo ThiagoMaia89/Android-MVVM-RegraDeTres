@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">Regra de 3</string>
+    <string name="txt_titulo">Regra de Três</string>
+    <string name="vlr_A">Valor A</string>
+    <string name="vlr_B">Valor B</string>
+    <string name="vlr_C">Valor C</string>
+    <string name="result">X</string>
+    <string name="esta_para">ESTÁ PARA</string>
+    <string name="assim_como">ASSIM COMO</string>
+    <string name="btn_calcular">CALCULAR</string>
+    <string name="txt_donate">Ajude-nos a melhorar!</string>
+    <string name="btn_ok">OK</string>
+    <string name="inversa">inversa</string>
+    <string name="valor_a">Valor A</string>
+    <string name="txt_igual">=</string>
+    <string name="valor_b">Valor B</string>
+    <string name="valor_c">Valor C</string>
+    <string name="x">X</string>
+    <string name="calcular">Calcular</string>
+    <string name="limpar">Limpar</string>
+    <string name="valor_d">Valor D</string>
+    <string name="valor_e">Valor E</string>
+    <string name="valor_1a">Valor 1A</string>
+    <string name="valor_2a">Valor 2A</string>
+    <string name="valor_1b">Valor 1B</string>
+    <string name="valor_2b">Valor 2B</string>
+    <string name="valor_3a">Valor 3A</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--    <string-array name="grandezas">
+            <item>&#45;&#45;&#45;&#45; Grandeza &#45;&#45;&#45;&#45;</item>
+            <item>Reais</item>
+            <item>Centavos</item>
+            <item>Litros</item>
+            <item>Mililitros</item>
+            <item>Quilometros</item>
+            <item>Metros</item>
+            <item>Centimetros</item>
+            <item>Quilos</item>
+            <item>Gramas</item>
+            <item>Graus</item>
+        </string-array>-->
+
+
+</resources>

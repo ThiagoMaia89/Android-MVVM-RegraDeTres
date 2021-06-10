@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#608A0D"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switch_ocpao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/transparent"
+        android:text="@string/inversa"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+        <EditText
+            android:id="@+id/valor1ASimples"
+            android:layout_width="100dp"
+            android:layout_height="35dp"
+            android:background="@drawable/bt_round"
+            android:gravity="center"
+            android:hint="@string/valor_1a"
+            android:inputType="numberDecimal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:text="@string/txt_igual"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/valor2ASimples"
+            android:layout_width="100dp"
+            android:layout_height="35dp"
+            android:background="@drawable/bt_round"
+            android:gravity="center"
+            android:hint="@string/valor_2a"
+            android:inputType="numberDecimal" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+        <EditText
+            android:id="@+id/valor1BSimples"
+            android:layout_width="100dp"
+            android:layout_height="35dp"
+            android:background="@drawable/bt_round"
+            android:gravity="center"
+            android:hint="@string/valor_1b"
+            android:inputType="numberDecimal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:text="@string/txt_igual"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/resultadoSimples"
+            android:layout_width="100dp"
+            android:layout_height="35dp"
+            android:background="@drawable/bt_round"
+            android:gravity="center"
+            android:hint="@string/x"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColorHint="@android:color/holo_orange_dark"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/bt_CalcSimples"
+            style="@style/TextAppearance.MaterialComponents.Button"
+            android:layout_width="180dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bt_round2"
+            android:text="@string/calcular"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/bt_LimparSimples"
+            style="@style/TextAppearance.MaterialComponents.Button"
+            android:layout_width="180dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bt_round2"
+            android:text="@string/limpar"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_explicacao_simples"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textColor="@android:color/white"/>
+
+</LinearLayout>

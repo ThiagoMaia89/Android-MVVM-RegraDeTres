@@ -1,10 +1,12 @@
 package com.simplesoftware.regradetres;
 
 import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.appcompat.widget.SwitchCompat;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,6 +27,9 @@ public class FragmentComposto extends Fragment {
     Button calcComposta, limparComposta;
     TextView tv_explicacao_composto;
     SwitchCompat switch_valor1, switch_valor2, switch_valor3;
+
+    CompostoViewModel mViewModel;
+
     double vlr1A, vlr1B, vlr2A, vlr2B, vlr3A, resultado;
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -57,7 +62,34 @@ public class FragmentComposto extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_composto, container, false);
+
+        instanciarComponentes(view);
+        viewModelObserver();
+        calcCLick();
+        cleanClick();
+
+        return view;
+
+    }
+
+    @SuppressLint("DefaultLocale")
+    public void viewModelObserver() {
+
+        mViewModel = new ViewModelProvider(this).get(CompostoViewModel.class);
+        mViewModel.getmResultado().observe(getViewLifecycleOwner(), value -> {
+            if (value == 0) {
+                resultadoComposta.setText("X");
+                resultadoComposta.setTextColor(Color.parseColor("#FFFF8800"));
+            } else {
+                resultadoComposta.setText(String.format("%.2f", value).replace(".", ","));
+            }
+        });
+
+    }
+
+    public void instanciarComponentes(View view) {
 
         valor1AComposta = view.findViewById(R.id.valor1AComposta);
         valor1BComposta = view.findViewById(R.id.valor1BComposta);
@@ -72,66 +104,28 @@ public class FragmentComposto extends Fragment {
         switch_valor3 = view.findViewById(R.id.switch_valor3);
         tv_explicacao_composto = view.findViewById(R.id.tv_explicacao_composto);
 
-        calcComposta.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint({"DefaultLocale", "SetTextI18n"})
-            @Override
-            public void onClick(View v) {
-                try {
-                    double grupo1, grupo2;
-                    vlr1A = Double.parseDouble(String.valueOf(valor1AComposta.getText()));
-                    vlr1B = Double.parseDouble(String.valueOf(valor1BComposta.getText()));
-                    vlr2A = Double.parseDouble(String.valueOf(valor2AComposta.getText()));
-                    vlr2B = Double.parseDouble(String.valueOf(valor2BComposta.getText()));
-                    vlr3A = Double.parseDouble(String.valueOf(valor3AComposta.getText()));
-                    if (switch_valor1.isChecked()) {
-                        grupo1 = vlr1B / vlr1A;
-                    } else {
-                        grupo1 = vlr1A / vlr1B;
-                    }
-                    if (switch_valor2.isChecked()) {
-                        grupo2 = vlr2B / vlr2A;
-                    } else {
-                        grupo2 = vlr2A / vlr2B;
-                    }
-                    if (switch_valor3.isChecked()) {
-                        resultado = (grupo1 * grupo2) * vlr3A;
-                    } else {
-                        resultado = vlr3A / (grupo1 * grupo2);
-                    }
-                    resultadoComposta.setText(String.format("%.2f", resultado).replace(".", ","));
-
-                    tv_explicacao_composto.setText(
-                            String.format("%.2f", vlr1A).replace(".", ",")
-                                    + " está para " +
-                                    String.format("%.2f", vlr2A).replace(".", ",")
-                                    + " que está para " +
-                                    String.format("%.2f", vlr3A).replace(".", ",")
-                                    + "\nAssim como\n" +
-                                    String.format("%.2f", vlr1B).replace(".", ",")
-                                    + " está para " +
-                                    String.format("%.2f", vlr2B).replace(".", ",")
-                                    + " que está para " +
-                                    String.format("%.2f", resultado).replace(".", ","));
-
-                } catch (Exception e) {
-                    Toast.makeText(getActivity().getApplicationContext(), "Preencha todos os campos", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
-        limparComposta.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                valor1AComposta.setText("");
-                valor1BComposta.setText("");
-                valor2AComposta.setText("");
-                valor2BComposta.setText("");
-                valor3AComposta.setText("");
-                resultadoComposta.setText("");
-            }
-        });
-
-
-        return view;
     }
+
+    public void calcCLick() {
+
+        calcComposta.setOnClickListener(v -> {
+            mViewModel.setResult(valor1AComposta, valor1BComposta, valor2AComposta, valor2BComposta, valor3AComposta,
+                    switch_valor1, switch_valor2, switch_valor3, tv_explicacao_composto);
+        });
+
+    }
+
+    public void cleanClick() {
+
+        limparComposta.setOnClickListener(v -> {
+            valor1AComposta.setText("");
+            valor1BComposta.setText("");
+            valor2AComposta.setText("");
+            valor2BComposta.setText("");
+            valor3AComposta.setText("");
+            resultadoComposta.setText("");
+        });
+
+    }
+
 }

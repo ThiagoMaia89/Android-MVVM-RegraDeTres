@@ -65,22 +65,30 @@ public class FragmentSimples extends Fragment {
         cleanClick();
 
         return view;
+
     }
 
     @SuppressLint("DefaultLocale")
     public void viewModelObserver() {
+
         mViewModel = new ViewModelProvider(this).get(SimplesViewModel.class);
         mViewModel.getmResultado().observe(getViewLifecycleOwner(), value -> {
             if (value == 0) {
+
                 resultadoSimples.setText("X");
                 resultadoSimples.setTextColor(Color.parseColor("#FFFF8800"));
+
             } else {
+
                 resultadoSimples.setText(String.format("%.2f", value).replace(".", ","));
+
             }
         });
+
     }
 
     public void instanciarComponentes(View view) {
+
         valor1ASimples = view.findViewById(R.id.valor1ASimples);
         valor1BSimples = view.findViewById(R.id.valor1BSimples);
         valor2ASimples = view.findViewById(R.id.valor2ASimples);
@@ -89,21 +97,30 @@ public class FragmentSimples extends Fragment {
         limparSimples = view.findViewById(R.id.bt_LimparSimples);
         aSwitch = view.findViewById(R.id.switch_ocpao);
         tv_explicacao_simples = view.findViewById(R.id.tv_explicacao_simples);
+
     }
 
     public void calcClick() {
+
         calcSimples.setOnClickListener(v -> {
-            mViewModel.setResult(valor1ASimples, valor1BSimples, valor2ASimples, aSwitch);
+
+            mViewModel.setResult(valor1ASimples, valor1BSimples, valor2ASimples, aSwitch, tv_explicacao_simples);
+
         });
+
     }
 
     public void cleanClick() {
+
         limparSimples.setOnClickListener(v -> {
+
             valor1ASimples.setText("");
             valor1BSimples.setText("");
             valor2ASimples.setText("");
             resultadoSimples.setText("");
+
         });
+
     }
 
 }
